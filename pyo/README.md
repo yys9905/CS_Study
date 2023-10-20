@@ -54,7 +54,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 신뢰성있는 전송이 필요할때 사용
 - 가변길이 헤더
 - 
-![UDP의 통신방](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
+![UDP의 통신방식](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
 - 비연결형 방식, 데이터그램 방식
 - 정보를 주고받을떄 신호절차를 가지고 있지 않음
 - UDP헤더의 CheckSum 필드로 최소한의 오류 검출
