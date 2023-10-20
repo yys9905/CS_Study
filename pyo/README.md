@@ -3,11 +3,11 @@
 <summary> TCP와 UDP 차이점 </summary>
 <div markdown="1">
 
-TCP는 **Transmission Control Protocol**으로, 전송 제어 프로토콜입니다.
+TCP는 **Transmission Control Protocol**으로, 전송 제어 프로토콜입니다.<br>
 TCP는 신뢰성 있는 데이터 전송을 위해 사용되는 **연결지향 프로토콜**입니다.
 
-UDP는 **User Datagram Protocol**으로 사용자 데이터그램 프로토콜입니다.
-UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**입니다.
+UDP는 **User Datagram Protocol**으로 사용자 데이터그램 프로토콜입니다.<br>
+UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**입니다.<br>
 두 단어 모두에게 존재하는 프로토콜(Protocol)이 디지털 장치간의 서로 통신하고 상호작용하기 위한 규칙의 집합입니다.
 
 **TCP와 UDP의 차이점**은 다음과 같습니다:
@@ -53,7 +53,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 각각의 패킷들은 연결되어있으며 번호가 매겨짐
 - 신뢰성있는 전송이 필요할때 사용
 - 가변길이 헤더
-- 
+  
 ![UDP의 통신방식](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
 - 비연결형 방식, 데이터그램 방식
 - 정보를 주고받을떄 신호절차를 가지고 있지 않음
@@ -62,7 +62,6 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 각각의 패킷들은 독립되어있다
 - 빠른 전송이 필요할때 사용
 - 고정 길이 헤더
-
 - 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음 ex) QUIC
 </div>
 </details>
