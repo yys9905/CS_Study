@@ -7,14 +7,14 @@
 <div markdown="1">
 
 TCP는 **Transmission Control Protocol**으로, 전송 제어 프로토콜입니다.
-
 TCP는 신뢰성 있는 데이터 전송을 위해 사용되는 **연결지향 프로토콜**입니다.
 
 UDP는 **User Datagram Protocol**으로 사용자 데이터그램 프로토콜입니다.
-
 UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**입니다.
-
 두 단어 모두에게 존재하는 프로토콜(Protocol)이 디지털 장치간의 서로 통신하고 상호작용하기 위한 규칙의 집합입니다.
+
+![TCP의 통신방식]([insert_image_url_here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbaYyaw%2FbtsyPwLxTLK%2FOUwLGVUiHYa0ij2pZNQI8K%2Fimg.png)https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbaYyaw%2FbtsyPwLxTLK%2FOUwLGVUiHYa0ij2pZNQI8K%2Fimg.png)
+![UDP의 통신방]([insert_image_url_here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
 
 **TCP와 UDP의 차이점**은 다음과 같습니다:
 
@@ -30,7 +30,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - TCP는 주로 이메일, 파일 전송과 같이 신뢰성이 중요한 경우 사용됩니다.
 - UDP는 실시간 스트리밍, 온라인 게임, 음성통화 같이 데이터 전송 속도가 중요한 경우 사용됩니다.
 
-![TCP](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbHoWOZ%2FbtsyQSUDDPR%2FzSvULeIM1LJunmoUVinc4k%2Fimg.png)
+![TCP의 3way&4way](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbHoWOZ%2FbtsyQSUDDPR%2FzSvULeIM1LJunmoUVinc4k%2Fimg.png)
 
 **TCP 패킷의 재전송 과정**:
 1. 패킷 송신: 송신자는 여러 개의 패킷으로 나눠 수신자에게 보냄. 각 패킷은 고유한 일련번호를 가지고 있습니다.
@@ -44,14 +44,6 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 데이터 전송: 연결 설정 후, 데이터를 주고 받을 수 있습니다. A는 작은 조각으로 나눠 B에게 보내면 재조립하여 사용합니다.
 - 연결 해제 (Termination): 데이터 통신이 끝난 후, 연결을 해제합니다. A는 B에게 끝내고자 하는 의사를 전달합니다. B는 요청을 수락하고 연결이 종료됩니다.
 
-![TCP 3-way Handshake](insert_image_url_here)
-![TCP 4-way Handshake](insert_image_url_here)
 
-**TCP 3-way Handshake (연결 설정) 및 TCP 4-way Handshake (연결 해제) - Hard Version**:
-**TCP 3-way Handshake (연결 설정)**:
-- Step 1 - 클라이언트가 서버에게 SYN 보내기 (SYN, Seq=X): 연결 설정 단계에서 클라이언트가 서버에게 연결을 요청하는 SYN 패킷을 보냅니다.
-- Step 2 - 서버가 클라이언트에게 응답하기 (SYN, ACK, Seq=Y, Ack=X+1): 서버는 클라이언트의 요청을 받고, 클라이언트의 순서 번호(X)를 확인한 후 자신의 순서 번호(Y)와 함께 SYN/ACK 패킷을 보냅니다.
-- Step 3 - 클라이언트가 서버에게 응답하기 (ACK, Seq=X+1, Ack=Y+1): 클라이언트는 서버의 응답을 받고, 서버의 순서 번호(Y)를 확인한 후 ACK 패킷을 보냅니다.
 
-**TCP 4-way Handshake (연결 해제)**:
-- Step 1 - 클라이언트가 서버에게 연결 종료 요청 (FIN, Seq=X): 데이터 통신이 끝나면 클라이언트는 서버에게 연결 종
+</div>
