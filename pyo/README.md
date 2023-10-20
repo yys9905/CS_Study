@@ -13,9 +13,6 @@ UDP는 **User Datagram Protocol**으로 사용자 데이터그램 프로토콜�
 UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**입니다.
 두 단어 모두에게 존재하는 프로토콜(Protocol)이 디지털 장치간의 서로 통신하고 상호작용하기 위한 규칙의 집합입니다.
 
-![TCP의 통신방식]([insert_image_url_here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbaYyaw%2FbtsyPwLxTLK%2FOUwLGVUiHYa0ij2pZNQI8K%2Fimg.png)https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbaYyaw%2FbtsyPwLxTLK%2FOUwLGVUiHYa0ij2pZNQI8K%2Fimg.png)
-![UDP의 통신방]([insert_image_url_here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
-
 **TCP와 UDP의 차이점**은 다음과 같습니다:
 
 **신뢰성**:
@@ -32,6 +29,11 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 
 ![TCP의 3way&4way](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbHoWOZ%2FbtsyQSUDDPR%2FzSvULeIM1LJunmoUVinc4k%2Fimg.png)
 
+"SYN"은 "Synchronize"의 약자로 동기입니다.
+"ACK"는 "Acknowledgment"의 약자로 승인입니다.
+"FIN"은 "Finish"의 약자로 종료입니다. 그 과정을 리눅스를 통해 3way, 4way인 것이 보입니다.
+중간의 P의 경우, 패킷의 약자로 데이터 패킷을 전송하는 과정입니다.
+
 **TCP 패킷의 재전송 과정**:
 1. 패킷 송신: 송신자는 여러 개의 패킷으로 나눠 수신자에게 보냄. 각 패킷은 고유한 일련번호를 가지고 있습니다.
 2. 패킷 수신: 수신자는 패킷을 받고, 패킷의 일련번호를 확인하여 순서대로 재조립합니다.
@@ -44,6 +46,25 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 데이터 전송: 연결 설정 후, 데이터를 주고 받을 수 있습니다. A는 작은 조각으로 나눠 B에게 보내면 재조립하여 사용합니다.
 - 연결 해제 (Termination): 데이터 통신이 끝난 후, 연결을 해제합니다. A는 B에게 끝내고자 하는 의사를 전달합니다. B는 요청을 수락하고 연결이 종료됩니다.
 
+![TCP의 통신방식](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbaYyaw%2FbtsyPwLxTLK%2FOUwLGVUiHYa0ij2pZNQI8K%2Fimg.png)
+- 연결 지향 방식, 패킷 교환방식
+- 3way handshaking 으로 연결 4way handshaking으로 해제
+- 흐름제어 - 송.수신측의 데이터 처리속도 차이 줄이기 위함, receiver가 현재 상태를 sender에게 피드백해 패킷 수를 조절
+- 혼잡 제어 - 송신측의 데이터 전달과 네트워크 데이터 처리 속도 차이를 해결 하기 위함
+- 높은 신뢰성- 낮은 성능
+- 전이중(각각의 독립된 회선 사용), 점대점(1대1통신) 방식
+- 각각의 패킷들은 연결되어있으며 번호가 매겨짐
+- 신뢰성있는 전송이 필요할때 사용
+- 가변길이 헤더
+- 
+![UDP의 통신방](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6tEyH%2FbtsyOFvfD9d%2FvQXKydWBR3KTHCKTRvwZc0%2Fimg.png)
+- 비연결형 방식, 데이터그램 방식
+- 정보를 주고받을떄 신호절차를 가지고 있지 않음
+- UDP헤더의 CheckSum 필드로 최소한의 오류 검출
+- 낮은 신뢰성 -높은 성
+- 각각의 패킷들은 독립되어있다
+- 빠른 전송이 필요할때 사용
+- 고정 길이 헤더
 
-
+- 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음 ex) QUIC
 </div>
