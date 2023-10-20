@@ -25,9 +25,8 @@
 			신뢰성있는 전송이 필요할때 사용
 			
 			가변길이 헤더
+			![tcpex](https://raw.githubusercontent.com/yys9905/CS_Study/main/yang/image/tcpex.png)
 			
-			![[Untitled.png]]
-		
 		- UDP(****User Datagram Protocol)****
 		
 			비연결형 방식, 데이터그램 방식
@@ -43,7 +42,7 @@
 			빠른 전송이 필요할때 사용
 			
 			고정 길이 헤더
-			![[Untitled2.png]]
-			- 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음
+			![udpex](https://raw.githubusercontent.com/yys9905/CS_Study/main/yang/image/udpex.png)
+						- 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음
 			
 			ex) QUIC
