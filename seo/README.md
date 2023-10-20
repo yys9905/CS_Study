@@ -6,13 +6,13 @@
 <details>
 <summary>CS 관련 지식</summary>
 <div>
-  
   <details>
   <summary>네트워크</summary>
   <div>
     <details>
     <summary>TCP와 UDP의 차이점에 대해서 설명해보세요. (231020)</summary>
     <div>
+      
           * TCP와 UDP는 TCP/ID의 전송계층에서 사용되는 프로토콜
           ** * 전송계층: IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층
           * TCP와 UDP 모두 패킷*을 한 컴퓨터에서 다른 컴퓨터로 전달해 주는 IP 프로토콜을 기반으로 구현되어 있지만, 서로 다른 특징을 가짐
@@ -29,16 +29,22 @@
             </tr>
             <tr>
               <td>연결이 성공해야 통신 가능 (연결형 프로토콜)</td>
-              <td>데이터의 경계를 구분하지 않음( Byte-Stream Service)</td>
-              <td>신뢰성 있는 데이터 전송 (데이터의 재전송 존재)</td>
-              <td>1:1 (Unicast) 통신</td>
-              <td>신뢰성이 요구되는 애플리케이션에서 사용</td>
+              <td>비연결형 프로토콜 (연결 없이 통신이 가능)</td>
             </tr>
             <tr>
-              <td>비연결형 프로토콜 (연결 없이 통신이 가능)</td>
+              <td>데이터의 경계를 구분하지 않음 (Byte-Stream Service)</td>
               <td>데이터의 경계를 구분함 (Datagram Service)=독립적</td>
+            </tr>
+            <tr>
+              <td>신뢰성 있는 데이터 전송 (데이터의 재전송 존재)</td>
               <td>비신뢰성 있는 데이터 전송 (데이터의 재전송 없음)</td>
+            </tr>
+            <tr>
+              <td>1:1(Unicast) 통신</td>
               <td>1:1, 1:다(Broadcast), 다:다(Multicast) 통신</td>
+            </tr>
+            <tr>
+              <td>신뢰성이 요구되는 애플리케이션에서 사용</td>
               <td>간단한 데이터를 빠른 속도로 전송하고자 하는 애플리케이션에서 사용</td>
             </tr>
           </table>
@@ -46,6 +52,5 @@
     </details>
   </div>
   </details>
-  
 </div>
 </details>
