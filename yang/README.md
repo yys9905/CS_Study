@@ -1,12 +1,12 @@
 # CS_Study
 2023-10-20 시작
 <details><summary>네트워크</summary>
-<div markdown="1">
+<div>
 	<details><summary>- TCP와 UDP의 차이점에 대해서 설명해보세요. (231020)</summary>
-	<div markdown="1">
+	<div>
 		네트워크 통신이 일어나는 과정을 나눈 표준모델인 OSI 7계층 중 4계층 및 TCP/IP 4계층 중 3계층인 전송계층에 있는 전송방식으로 송신자와 수신자를 연결하는 통신 서비스를 제공하는서 사용되는 방법 두가지
 		<details><summary>- TCP(****Transmission Control Protocol)****</summary>
-		<div markdown="1">				
+		<div>				
 			연결 지향 방식, 패킷 교환방식
 			
 			3way handshaking 으로 연결 4way handshaking으로 해제
@@ -31,7 +31,7 @@
 		</div>
 		</details>
 		<details><summary>UDP(****User Datagram Protocol)****</summary>
-		<div markdown="1">	
+		<div>	
 			비연결형 방식, 데이터그램 방식
 			
 			정보를 주고받을떄 신호절차를 가지고 있지 않음
