@@ -1,7 +1,7 @@
 ## 2023-10-20 금요일
 <details>
-<summary> TCP와 UDP 차이점 </summary>
-<div markdown="1">
+  <summary> TCP와 UDP 차이점 </summary>
+    <div markdown="1">
 
 TCP는 **Transmission Control Protocol**으로, 전송 제어 프로토콜입니다.<br>
 TCP는 신뢰성 있는 데이터 전송을 위해 사용되는 **연결지향 프로토콜**입니다.
@@ -63,7 +63,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 빠른 전송이 필요할때 사용
 - 고정 길이 헤더
 - 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음 ex) QUIC
-</div>
+  </div>
 </details>
 
 
