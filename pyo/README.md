@@ -71,6 +71,50 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 <details>
 <summary> 비대칭키 암호화, 대칭키 암호화에 대해 간단히 설명해주세요. </summary>
 <div markdown="1">
-내용
+대칭키 암호화는 암호화와 복호화에 같은 키를 사용하는 암호화 방식입니다.
+
+비대칭키 암호화는 암호화와 복호화에 다른 키를 사용하는 암호화 방식입니다.
+
+### 1. 대칭키(비밀키) 암호화
+
+**장점**: 데이터를 암호화하기 위한 연산이 빨라 대용량 데이터 암호화에 적합, 구현이 용이, 기밀성을 제공
+**단점**: 키를 교환해야하는 문제, 탈취 관리 걱정, 사람이 증가할 수록 키 관리가 어려움, 확장성 떨어짐
+
+- 하나의 비밀키를 서버와 클라이언트 모두 함께 사용
+- 암호화와 복호화에 같은 키를 사용하는 방식
+- 비밀키 하나만 알아내면 암호화된 내용 해킹 가능
+- 속도가 빠르다는 장점이 있지만, 키를 교환해야 한다는 문제가 있어서 중간에 탈취 당해 해킹당할 수 있다.
+- (위험한 이유: 처음 상대방에게 대칭키를 전송하는 과정에서 탈취당하면 통신 내용 모두 해킹 가능)
+- 서로 키를 보관해야 하기 때문에 관리해야 할 키가 방대해질 수 있다.
+
+![대칭키(비밀키)](https://file.notion.so/f/f/ca443b80-1159-4dfd-b76f-00521933db07/75aee8b5-fbb0-464c-bd8c-6c0a6aae1e2d/Untitled.png?id=360d854b-6726-4ddb-a224-57cfb6deefec&table=block&spaceId=ca443b80-1159-4dfd-b76f-00521933db07&expirationTimestamp=1698192000000&signature=zmDLe-uBzpeQrSf7zyll0p9c6SHPq2V3o44rrON20bA&downloadName=Untitled.png)
+
+**대칭키(비밀키) 암호화의 종류**
+
+- DES(Data Encryption Standard): 64-비트 블록 암호, 56-비트 비밀키 사용
+- AES(Advanced Encryption Standard): 128-비트 블록 암호, 안전성 문제로 인해 DES 대체
+- 아리아(ARIA): 한국에서 개발된 128-비트 블록 암호
+- 시드(SEED): 한국에서 개발된 128-비트 블록 암호
+
+### 2. 비대칭키(공개키) 암호화
+
+**장점**: 키 분배 및 키 관리 용이, 기밀성/인증/부인 방지 기능 제공
+**단점**: 속도가 느림, 상대적으로 키의 길이가 길다
+
+- 공개키와 개인키(비밀키) 두 개를 가지고 있음
+- 공개키는 모든 사람이 접근 가능한 키
+- 개인키는 각 사용자만이 가지고 있는 키
+- 공개키는 누구나 알 수 있지만, 그에 대응하는 개인키(비밀키)는 키의 소유자만이 알 수 있다. 특정 비밀키를 가진 사람만이 내용을 열어볼 수 있도록 하는 방식.
+- (안전한 이유: 공개 키로 누구든지 암호화해서 보낼 수 있지만, 복호화가 가능한 것은 개인키를 가진 사람뿐 - 반대 상황도 가능)
+
+![비대칭키(공개키)](https://file.notion.so/f/f/ca443b80-1159-4dfd-b76f-00521933db07/9b3cee11-ac0d-42dc-b6bd-3f69c992409f/Untitled.png?id=48d90b47-9e9d-4c36-92f8-e5e5e6bc68d1&table=block&spaceId=ca443b80-1159-4dfd-b76f-00521933db07&expirationTimestamp=1698192000000&signature=WZD_oCijUIo53Docf6eybAqJsFOlX3hEdCydMHubFr8&downloadName=Untitled.png)
+
+**비대칭키 암호화 종류**
+
+1. RSA: 가장 대표적인 공개키 암호화 알고리즘, 소인수분해 문제의 해결이 어려운 점을 이용
+2. DSA (Digital Signature Algorithm): 전자 서명을 위해 사용되는 암호화 방식
+3. ECC (Elliptic Curve Cryptography): 타원 곡선 이산대수 문제를 기반으로 하는 공개키 암호 알고리즘, 무선 인터넷, 스마트 카드 등의 제한된 환경에 적합
+
+![비밀키/ 공개키 요약표](https://file.notion.so/f/f/ca443b80-1159-4dfd-b76f-00521933db07/aa2e76fc-9f93-4f08-b806-977ad86580cc/Untitled.png?id=7af9ad0f-79d5-473e-9a47-59031ce9d3f8&table=block&spaceId=ca443b80-1159-4dfd-b76f-00521933db07&expirationTimestamp=1698192000000&signature=9TsxVUWaxV4nljm9bKXwNg4Tgy3uZNRU2dRUi7ri5BE&downloadName=Untitled.png)
 </div>
 </details>
