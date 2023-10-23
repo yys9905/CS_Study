@@ -107,7 +107,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - 공개키는 누구나 알 수 있지만, 그에 대응하는 개인키(비밀키)는 키의 소유자만이 알 수 있다. 특정 비밀키를 가진 사람만이 내용을 열어볼 수 있도록 하는 방식.
 - (안전한 이유: 공개 키로 누구든지 암호화해서 보낼 수 있지만, 복호화가 가능한 것은 개인키를 가진 사람뿐 - 반대 상황도 가능)
 
-![비대칭키(공개키)](https://file.notion.so/f/f/ca443b80-1159-4dfd-b76f-00521933db07/9b3cee11-ac0d-42dc-b6bd-3f69c992409f/Untitled.png?id=48d90b47-9e9d-4c36-92f8-e5e5e6bc68d1&table=block&spaceId=ca443b80-1159-4dfd-b76f-00521933db07&expirationTimestamp=1698192000000&signature=WZD_oCijUIo53Docf6eybAqJsFOlX3hEdCydMHubFr8&downloadName=Untitled.png)
+![비대칭키(공개키)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd8dYeE%2Fbtsy2or8Ca4%2FubcsvZYNPX9ek7WqNrj920%2Fimg.png)
 
 **비대칭키 암호화 종류**
 
