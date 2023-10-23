@@ -87,7 +87,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 - (위험한 이유: 처음 상대방에게 대칭키를 전송하는 과정에서 탈취당하면 통신 내용 모두 해킹 가능)
 - 서로 키를 보관해야 하기 때문에 관리해야 할 키가 방대해질 수 있다.
 
-![대칭키(비밀키)](https://file.notion.so/f/f/ca443b80-1159-4dfd-b76f-00521933db07/75aee8b5-fbb0-464c-bd8c-6c0a6aae1e2d/Untitled.png?id=360d854b-6726-4ddb-a224-57cfb6deefec&table=block&spaceId=ca443b80-1159-4dfd-b76f-00521933db07&expirationTimestamp=1698192000000&signature=zmDLe-uBzpeQrSf7zyll0p9c6SHPq2V3o44rrON20bA&downloadName=Untitled.png)
+![대칭키(비밀키)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGTeWO%2Fbtsy2oZWZpu%2FTuxdc1d3GLkKjLF0shMa3K%2Fimg.png)
 
 **대칭키(비밀키) 암호화의 종류**
 
