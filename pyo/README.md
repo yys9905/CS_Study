@@ -124,6 +124,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 <br>
 **객체 지향 프로그래밍(Object-Oriented Programming, OOP)** 은 프로그램을 객체라는 독립된 단위들의 모임으로 보고 개발하는 것입니다. 객체는 상태와 행위를 가지며, 
 서로 메시지를 주고받고 데이터를 처리할 수 있습니다. 이러한 객체들이 서로 상호작용하면서 프로그램을 구성하는 것이 객체 지향 프로그래밍의 핵심입니다
+<br>
 
 ## 절차지향 프로그래밍 (Procedural Programming)
 
@@ -173,10 +174,13 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 | 보안성     | 낮음                   | 높음                     |
 | 데이터 공유 | 모든 함수 공유          | 객체 간 멤버 함수로만 공유 |
 
-요약:
+## 요약 및 참고 이미지
 
 - 절차지향은 데이터 중심, 객체지향은 기능 중심입니다.
 - 객체지향은 상속, 캡슐화, 다형성을 활용해 코드를 재사용하거나 확장하기 좋습니다.
+
+![절차지향 vs 객체지향)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUDYl5%2Fbtsy9hU9Ce4%2FRRTEKUeF9IrR5xUJ7S1Wi1%2Fimg.png)
+![절차지향 vs 객체지향)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2WX4V%2Fbtsy9gIOy1j%2Fxqm4a2LvgwOFxPT4j5XYlK%2Fimg.png)
 
 </div>
 </details>
