@@ -189,7 +189,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 
 ## 2023-10-27 금요일
 <details>
-<summary> 다음주제는.. </summary>
+<summary> 동기와 비동기 코드 실행방식에 대해 설명해주세요. </summary>
   <div markdown="1">
     내용추가 예정
   </div>
