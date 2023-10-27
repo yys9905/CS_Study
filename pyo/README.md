@@ -181,9 +181,11 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 
 ![절차지향 vs 객체지향)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUDYl5%2Fbtsy9hU9Ce4%2FRRTEKUeF9IrR5xUJ7S1Wi1%2Fimg.png)
 ![절차지향 vs 객체지향)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2WX4V%2Fbtsy9gIOy1j%2Fxqm4a2LvgwOFxPT4j5XYlK%2Fimg.png)
-<!------------------------------------------------------------------------------------------------ 4일차 ------------------------------------------------------------------------------------------------>
+
 </div>
 </details>
+
+<!------------------------------------------------------------------------------------------------ 4일차 ------------------------------------------------------------------------------------------------>
 
 <details>
 <summary> 동기와 비동기 코드 실행방식에 대해 설명해주세요. </summary>
@@ -191,12 +193,14 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 
 ![동기 vs 비동기](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbUe0qA%2FbtszjDWMFQo%2FS1sHuCz8yhoUkYKlIaek41%2Fimg.png)
 
-동기 (Synchronous)와 비동기(Asynchronous)
-동기는 요청을 보낸 후 응답을 받아야지만 다음 동작이 이루어지는 방식이다. 어떠한 태스크를 처리할 동안 나머지 태스크는 대기한다. 실제로 cpu가 느려지는 것은 아니지만 시스템의 전체 효율이 저하된다고 할 수 있다.
+**동기(Synchronous)** 와 **비동기(Asynchronous)**
+**동기**는 요청을 보낸 후 응답을 받아야지만 다음 동작이 이루어지는 방식이다. <br>
+어떠한 태스크를 처리할 동안 나머지 태스크는 대기한다. <btr>
+실제로 cpu가 느려지는 것은 아니지만 시스템의 전체 효율이 저하된다고 할 수 있다. <br>
 
 ![동기식 처리모델](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FclMBVS%2Fbtszi7KCodC%2FNqfGUderS41KWxaG9CSUA0%2Fimg.png)
 
-//코드로 처리
+```
 function func1(){
 	console.log('1');
   func2();
@@ -211,6 +215,7 @@ function func3(){
 
 func1();
 //결과 1,2,3
+```
 
 비동기는 요청을 보낸 후 응답의 수락 여부와는 상관없이 다음 태스크가 동작하는 방식이다. 자원을 효율적으로 사용할 수 있다. 이때, 비동기 요청시 응답 후 처리할 Callback 함수를 함께 알려준다. 하지만 비동기 처리를 위해 여러 콜백함수를 중첩시키면 콜백지옥이 발생한다. 이를 해결하기 위해 Promise를 도입하였고, Async / Await 추가로 도입되었다. (Async / Await는  JavaScript에서 비동기 처리를 동기적인 방식으로 작성하게 해주는 문법)
 
