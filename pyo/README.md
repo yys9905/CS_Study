@@ -194,9 +194,7 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 ![동기 vs 비동기](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbUe0qA%2FbtszjDWMFQo%2FS1sHuCz8yhoUkYKlIaek41%2Fimg.png)
 
 **동기(Synchronous)** 와 **비동기(Asynchronous)**
-**동기**는 요청을 보낸 후 응답을 받아야지만 다음 동작이 이루어지는 방식이다. <br>
-어떠한 태스크를 처리할 동안 나머지 태스크는 대기한다. <btr>
-실제로 cpu가 느려지는 것은 아니지만 시스템의 전체 효율이 저하된다고 할 수 있다. <br>
+- **동기**는 요청을 보낸 후 응답을 받아야지만 다음 동작이 이루어지는 방식이다. 어떠한 태스크를 처리할 동안 나머지 태스크는 대기한다. 실제로 cpu가 느려지는 것은 아니지만 시스템의 전체 효율이 저하된다고 할 수 있다.
 
 ![동기식 처리모델](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FclMBVS%2Fbtszi7KCodC%2FNqfGUderS41KWxaG9CSUA0%2Fimg.png)
 
@@ -217,10 +215,11 @@ func1();
 //결과 1,2,3
 ```
 
-비동기는 요청을 보낸 후 응답의 수락 여부와는 상관없이 다음 태스크가 동작하는 방식이다. 자원을 효율적으로 사용할 수 있다. 이때, 비동기 요청시 응답 후 처리할 Callback 함수를 함께 알려준다. 하지만 비동기 처리를 위해 여러 콜백함수를 중첩시키면 콜백지옥이 발생한다. 이를 해결하기 위해 Promise를 도입하였고, Async / Await 추가로 도입되었다. (Async / Await는  JavaScript에서 비동기 처리를 동기적인 방식으로 작성하게 해주는 문법)
+- **비동기** 는 요청을 보낸 후 응답의 수락 여부와는 상관없이 다음 태스크가 동작하는 방식이다. 자원을 효율적으로 사용할 수 있다. 이때, 비동기 요청시 응답 후 처리할 **Callback 함수** 를 함께 알려준다. 하지만 비동기 처리를 위해 여러 콜백함수를 중첩시키면 **콜백지옥** 이 발생한다. 이를 해결하기 위해 **Promise** 를 도입하였고, **Async / Await**  추가로 도입되었다. (Async / Await는  JavaScript에서 비동기 처리를 동기적인 방식으로 작성하게 해주는 문법)
 
 ![비동기식 처리모델](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdZAmIj%2FbtszhvrtLF3%2FaBMUHmCpZjd0WmWdvxlkYk%2Fimg.png)
 
+```
 function func1() { 
   setTimeout(function(){
   console.log('1');
@@ -242,36 +241,39 @@ function func3() {
 func1();
 
 //결과 2, 1, 3
+```
 
-동기가 사용되는 예시
-파일 시스템에서 파일을 읽는 작업: 파일을 읽은 후 해당 내용으로 작업하는 경우
-데이터베이스에서 데이터를 읽어오는 작업 : DB에서 데이터를 읽은 후, 그 데이터를 다음 작업을 수행해야 하는 경우 동기처리가 필요함 (반대로 데이터 추출 작업이 빈번한 경우, 비동기식으로 하기도 함)
+**동기가 사용되는 예시**
+- 파일 시스템에서 파일을 읽는 작업: 파일을 읽은 후 해당 내용으로 작업하는 경우
+- 데이터베이스에서 데이터를 읽어오는 작업 : DB에서 데이터를 읽은 후, 그 데이터를 다음 작업을 수행해야 하는 경우 동기처리가 필요함 (반대로 데이터 추출 작업이 빈번한 경우, 비동기식으로 하기도 함)
 
+```
 async createCollection(userId: number, name: string) {
 try {
   const newBookmark = await this.collectionRepository.insert({
     user_id: userId,
   });
 }
+```
 
-비동기가 사용되는 예시
-웹 API 호출 : API를 호출하고 기다리는 동안 다른 작업도 수행
-setTimeOut 함수 : 주어진 시간이 지난후 특정함수가 실행되는 함수로 함수가 실행되는동안 다른 작업도 수행
+**비동기가 사용되는 예시**
+- 웹 API 호출 : API를 호출하고 기다리는 동안 다른 작업도 수행
+- setTimeOut 함수 : 주어진 시간이 지난후 특정함수가 실행되는 함수로 함수가 실행되는동안 다른 작업도 수행
 
-블로킹과 논블로킹
-흐름의 차단 여부를 결정
+**블로킹과 논블로킹**
+- 흐름의 차단 여부를 결정
 
-블로킹
-제어권을 넘겨줌 - 명령이 수행되기 시작하면 프로그램 흐름의 제어권이 명령 수행중인 함수로 넘어감
-논블로킹
-제어권을 넘겨주지 않음 - 명령을 시키고 제어권은 여전히 메인이 가지고 있음
+**블로킹**
+- 제어권을 넘겨줌 - 명령이 수행되기 시작하면 프로그램 흐름의 제어권이 명령 수행중인 함수로 넘어감
+**논블로킹**
+- 제어권을 넘겨주지 않음 - 명령을 시키고 제어권은 여전히 메인이 가지고 있음
 
 ![동기비동기 블로킹논블로](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdt2nzc%2Fbtszhn1l2NQ%2F2mrpkKgUHf4gQm6HycWnBK%2Fimg.png)
 
-Sync_Block -- 위에서 설명한 동기방식과 동일
-Async_Non-Block -- 위에서 설명한 비동기방식와 동일
-Sync_Non-block -- 제어권을 메인에서 가지고 있어 다른일을 수행할 수 있지만 FuncA가 완료되어야만 다음 작업이 가능할때 사용 ex) 게임 로딩, 프로그래스바 - 둘다 제어권은 메인에서 가지고 있으며 로딩바의 작동은 지속적으로 보여지지만 데이터는 계속 로딩되고 있으며 로딩하고 있는 시스템에 계속해서 어느정도 로드 됬는지 조회한 후 로딩이 끝나야 다음 작업으로 넘어간다.
-Async_Block -- 실수나 잘못 구현한 경우가 아닌 경우 sync_block과 차이가 없기에 거의 사용되지 않음 -- node.js와 MYSQL의 경우 node.js에서 비동기 방식의 쿼리를 보냈을떄 MySQL에서 블로킹을 하기때문에 결국엔 동기처리와 다르지 않게 된다고 한다.
+- Sync_Block : 위에서 설명한 동기방식과 동일
+- Async_Non-Block : 위에서 설명한 비동기방식와 동일
+- Sync_Non-block : 제어권을 메인에서 가지고 있어 다른일을 수행할 수 있지만 FuncA가 완료되어야만 다음 작업이 가능할때 사용 ex) 게임 로딩, 프로그래스바 - 둘다 제어권은 메인에서 가지고 있으며 로딩바의 작동은 지속적으로 보여지지만 데이터는 계속 로딩되고 있으며 로딩하고 있는 시스템에 계속해서 어느정도 로드 됬는지 조회한 후 로딩이 끝나야 다음 작업으로 넘어간다.
+- Async_Block : 실수나 잘못 구현한 경우가 아닌 경우 sync_block과 차이가 없기에 거의 사용되지 않음. node.js와 MYSQL의 경우 node.js에서 비동기 방식의 쿼리를 보냈을떄 MySQL에서 블로킹을 하기때문에 결국엔 동기처리와 다르지 않게 된다고 한다.
   </div>
 </details>
 
