@@ -94,7 +94,7 @@ funcA -> funcB -> funcA Fin -> func C -> funcC Fin -> funcB Fin -> ...
 
 #### sync-async-block-NonBlock 조합
 ![S_As_B_Nb](https://raw.githubusercontent.com/yys9905/CS_Study/main/yang/image/S_As_B_Nb.png)
-img 출처 : https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%EB%8F%99%EA%B8%B0%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%B8%94%EB%A1%9C%ED%82%B9%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC   
+img 출처 : [Inpa Dev(tistory) - 완벽히 이해하는 동기/비동기 & 블로킹/논블로킹](https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%EB%8F%99%EA%B8%B0%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%B8%94%EB%A1%9C%ED%82%B9%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
 
 - 흔히 사용되는 동기 비동기 방식은 Sync_Block 방식과 Async_NBlock 방식이다.
 - 상황에 따라서 Sync_NBlock과 Async_Block 방식도 사용하긴 함
