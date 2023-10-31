@@ -70,8 +70,6 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 <details>
   <summary> RESTful API에 대해 설명해주세요. </summary>
   <div markdown="1">
-	  
-## RESTful API 설명
 
 ### REST란?
 **REpresentational State Transfer**의 약자로, 네트워크 상의 Client와 Server 사이의 통신 방식 중 하나입니다. REST는 자원 (resource)의 표현 (representation)을 통한 상태 전달을 의미하며, SW에서 관리하는 모든 것을 자원으로 정의하고, 해당 자원의 정보를 주고 받는 방식입니다.
