@@ -62,7 +62,7 @@ ex) QUIC
 - Layered System : Client는 REST API Server만 호출하고 REST 서버는 다중 계층으로 구성 가능 Client -> API Server -> Security -> ...)
 - Uniform Interface : URI로 지정한 자원에 대한 조작을 통일되고 한정적인 인터펭스로 수행함
 - Code on Demand(optional) : 서버로부터 스크립트를 받아 클라이언트에서 실행할 수도 있음
-- 
+  
 - 장점   
 -- HTTP 프로토콜을 그대로 사용하므로 별도의 인프라를 구축할 필요가 없음   
 -- HTTP 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다.   
