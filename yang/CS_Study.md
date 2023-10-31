@@ -3,6 +3,7 @@
 #Contents
 1. [네트워크](#네트워크)
    1) [TCP / UDP](#tcp와-udp의-차이점에-대해서-설명해보세요-231020)
+   2) [RESTful](#RESTful이란-무엇이며,-이것에-대해서-아는대로-설명해보세요.-231030)
 2. [운영체제](#운영체제)
 3. [암호학/보안](#암호학/보안)
 4. [프로그래밍 패러다임](#프로그래밍-패러다임)
@@ -35,6 +36,64 @@
 ![udpex](https://raw.githubusercontent.com/yys9905/CS_Study/main/yang/image/udpex.png)
 - 일반적으로는 저런 내용이지만 UDP는 커스터마이징이 가능하며 개발자의 역량에 따라서 UDP를 이용해 TCP와 비슷한 신뢰성 가지게 할 수 있음
 ex) QUIC
+
+## RESTful이란 무엇이며, 이것에 대해서 아는대로 설명해보세요. (231030)
+### REST(Representational State Transfer)
+작동 방식에 대한 조건을 부과하는 소프트웨어 아키텍처이며 Client와 Server사이의 통신 방식 중 하나이다.
+자원을 이름으로 구분하여 해당 자원의 상태를 주고 받는 모든것을 의미한다. 
+(*자원 - 소프트웨어가 관리하는 모든것 *상태 - 요청되어지는 시점에서의 자원의 상태 JSON, XML로 주고받는게 일반적)
+
+- HTTP URI를 통해 자원을 명시하고, HTTP Method(Post, GET, PUT, DELETE)를 통해 자원에 대한 CRUD를 적용하는 것
+- 자원 기반구조(ROA, Resource Oriented Architecture)
+- 웹사이트의 모든 자원에 고유한 ID(HTTP URI)를 부여한다.
+- CRUD
+-- Create - POST
+-- Read - GET
+-- Update - PUT
+-- Delete - DELETE
+-- HEAD - HEAD
+- 구성요소
+-- 자원(URI):URI
+-- 행위(Verb): HTTP Method
+-- 표현(Representation of Resource)
+- Server-Client 구조 : 자원이 있는쪽 Server, 요청하는 쪽 Client 둘은 분리 되어있음
+- Stateless : HTTP 프로토콜기반이기에 REST역시 무상태성을 가짐 -> 서버는 요청만을 단순 처리함
+- Chaceable : 캐시 사용이 가능
+- Layered System : Client는 REST API Server만 호출하고 REST 서버는 다중 계층으로 구성 가능 Client -> API Server -> Security -> ...)
+- Uniform Interface : URI로 지정한 자원에 대한 조작을 통일되고 한정적인 인터펭스로 수행함
+- Code on Demand(optional) : 서버로부터 스크립트를 받아 클라이언트에서 실행할 수도 있음
+- 
+- 장점
+-- HTTP 프로토콜을 그대로 사용하므로 별도의 인프라를 구축할 필요가 없음
+-- HTTP 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다.
+-- Hypermedia API의 기본을 지키면서 범용성을 보장
+(*hypermedia -얽혀있는 정보: 복잡한것, 바뀌는것, 확실하지 않은것을 위한 파일 구조(그래픽, 오디오, 영상, 텍스트 등))
+-- 의도하는 바를 명확하게 나타내므로 쉽게 파악 할 수 있다. 
+-- 서버와 클라이언트의 역할을 명확하게 분리한다.
+- 단점
+-- 표준이 존재하지 않는다
+-- Method의 형태가 제한적이다. 
+- 설계 기본 규칙
+-- 도큐먼트 : 객체 인스턴스나 데이터베이스 레코드, 컬렉션 내의 구체적인 맴버
+-- 컬렉션 : 서버에서 관리하는 디렉터리
+-- 스토어 클라이언트에서 관리하는 리소스 저장소
+ 1) URI는 자원을 표현해야함
+-- 동사보다는 명사, 대문자보다는 소문자 이용
+-- 도큐먼트 이름 = 단수 명사 이용
+-- 컬렉션 이름 = 복수 명사 이용
+-- 스토어 이름 = 복수 명사 이용
+ex) GET /Member/1 -> GET /members/1  --- members(컬렉션), 1(도큐먼트)
+2) 자원에 대한 행위는 HTTP Method로 표현
+-- URI에 Method가 들어가면 안된다.
+-- URI에 행위에 대한 동사 표현이 들어가면 안된다.
+-- 경로 부분 중 변하는 부분은 유일 값으로 대체한다. id 등 
+3) 마지막 문자로 / 를 넣지 않는다.
+4) 불가피하게 긴 경로를 사용할 경우 (-)을 사용해가독성을 높이며 (_)은 이용하지 않는다.
+5) 확장자는 URI에 포함하지 않는다.
+* REST아키텍처 스타일을 따르는 API -> REST API
+* REST아키텍처를 완전하게 따라 만들어진 API -> RESTful API
+* REST아키텍처를 구현하는 웹 서비스 -> RESTful 웹서비스
+
 
 # 프로그래밍 패러다임
 ## 객체지향과 절차지향에 대해 설명해주세요. (231025)
