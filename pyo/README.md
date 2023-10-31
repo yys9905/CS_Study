@@ -70,8 +70,21 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
 <details>
   <summary> RESTful API에 대해 설명해주세요. </summary>
   <div markdown="1">
+	  
+### REST란?
+**REpresentational State Transfer**의 약자,
+자원을 이름으로 구분해 해당 자원의 정보를 주고 받는 모든 것을 의미 = 자원 (resource)의 표현 (representation)에 의한 상태 전달을 뜻함 (네트워크 상의 Client와 Server 사이의 통신 방식 중 하나)
 
+![RESTful API](https://blog.kakaocdn.net/dn/RoRYS/btszvcF6bDZ/sKKc6iCtUTsOJssIOBMsLK/img.png)
 
+- 정의
+- 자원: 해당 SW가 관리하는 모든 것 (문서, 그림, 데이터 등)
+- 표현: 그 자원을 표현하기 위한 이름 (예: 학생 정보가 자원이라면 ‘students’ 등)
+- 상태 전달: 데이터가 요청되는 시점에 자원의 상태를 전달 (JSON 혹은 XML)
+- 개념
+- 어떤 자원에 대해 CRUD 연산을 수행하기 위해 URI (Resource)로 GET, POST 등의 방식 (Method)을 사용하여 요청을 보내면, 요청을 위한 자원은 특정한 형태 (Representation of Resource)로 표현
+- URI: Uniform Resource Locator로 인터넷 상 자원의 위치
+- URL : Uniform Resource Identifier로 인터넷 상의 자원을 식별하기 위한 문자열의 구성 
   </div>
 </details>
 
