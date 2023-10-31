@@ -220,11 +220,11 @@ app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 # REST 아키텍처 원칙에 따른 API 구현
 
-이 코드는 **REST 아키텍처 원칙**을 따르는 API를 구현하고 있습니다. RESTful API의 핵심 원칙은 **자원(Resource)**, **행위(Verb)**, **표현(Representation)**입니다.
+이 코드는 **REST 아키텍처 원칙**을 따르는 API를 구현하고 있습니다. RESTful API의 핵심 원칙은 **자원(Resource)**, **행위(Verb)**, **표현(Representation)** 입니다.
 
 ## 자원(Resource)
 
-이 코드에서 자원은 **책(Book)**입니다. 각 책은 고유한 ID를 가지며, 이를 통해 책을 식별하고 접근할 수 있습니다.
+이 코드에서 자원은 **책(Book)** 입니다. 각 책은 고유한 ID를 가지며, 이를 통해 책을 식별하고 접근할 수 있습니다.
 
 ## 행위(Verb)
 
