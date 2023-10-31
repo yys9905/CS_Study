@@ -71,20 +71,178 @@ UDP는 **빠른 데이터 전송을 중요시**하는 **비연결 프로토콜**
   <summary> RESTful API에 대해 설명해주세요. </summary>
   <div markdown="1">
 	  
+## RESTful API 설명
+
 ### REST란?
-**REpresentational State Transfer**의 약자,
-자원을 이름으로 구분해 해당 자원의 정보를 주고 받는 모든 것을 의미 = 자원 (resource)의 표현 (representation)에 의한 상태 전달을 뜻함 (네트워크 상의 Client와 Server 사이의 통신 방식 중 하나)
+**REpresentational State Transfer**의 약자로, 네트워크 상의 Client와 Server 사이의 통신 방식 중 하나입니다. REST는 자원 (resource)의 표현 (representation)을 통한 상태 전달을 의미하며, SW에서 관리하는 모든 것을 자원으로 정의하고, 해당 자원의 정보를 주고 받는 방식입니다.
 
 ![RESTful API](https://blog.kakaocdn.net/dn/RoRYS/btszvcF6bDZ/sKKc6iCtUTsOJssIOBMsLK/img.png)
 
-- 정의
+#### 정의
 - 자원: 해당 SW가 관리하는 모든 것 (문서, 그림, 데이터 등)
 - 표현: 그 자원을 표현하기 위한 이름 (예: 학생 정보가 자원이라면 ‘students’ 등)
 - 상태 전달: 데이터가 요청되는 시점에 자원의 상태를 전달 (JSON 혹은 XML)
-- 개념
+
+#### 개념
 - 어떤 자원에 대해 CRUD 연산을 수행하기 위해 URI (Resource)로 GET, POST 등의 방식 (Method)을 사용하여 요청을 보내면, 요청을 위한 자원은 특정한 형태 (Representation of Resource)로 표현
 - URI: Uniform Resource Locator로 인터넷 상 자원의 위치
-- URL : Uniform Resource Identifier로 인터넷 상의 자원을 식별하기 위한 문자열의 구성 
+- URL: Uniform Resource Identifier로 인터넷 상의 자원을 식별하기 위한 문자열의 구성
+
+![URL과 URI](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcx4Kdb%2FbtszyH50wNO%2FJIyzskvsS9KJTbJmTK0hsK%2Fimg.png)
+
+#### 구성 요소
+- 자원 (Resource) - URI
+  - 모든 자원에는 고유한 ID가 존재하고, 이 자원은 Server에 존재함
+  - 자원을 구별하는 ID는 '/exgroups/:exgroup_id'와 같은 HTTP URI 임
+  - Client는 URI를 이용해 자원을 지정하고 해당 자원의 상태(정보)에 대한 조작을 Server에 요청
+- 행위 (Verb) - Method
+  - HTTP 프로토콜의 Method(GET, POST, PUT, PATCH, DELETE)를 사용
+- 표현 (Representation of Resource)
+  - Client와 Server가 데이터를 주고받는 형태로 JSON, XML, TEXT, RSS 등이 있음
+  - JSON, XML을 통해 데이터를 주고 받는 것이 일반적
+- Server-Client (서버-클라이언트 구조)
+  - 자원이 있는 쪽이 Server, 자원을 요청하는 쪽이 Client가 됩니다.
+  - REST Server: API를 제공하고 비즈니스 로직 처리 및 저장을 책임집니다.
+  - Client: 사용자 인증이나 context(세션, 로그인 정보) 등을 직접 관리하고 책임집니다.
+  - 서로 간 의존성이 줄어듭니다.
+
+#### Stateless (무상태)
+- HTTP 프로토콜은 Stateless Protocol이므로 REST 역시 무상태성을 가집니다.
+- Client의 context를 Server에 저장하지 않음
+- 세션과 쿠키와 같은 context 정보를 신경쓰지 않아도 되므로 구현이 단순화됩니다.
+- Server는 각각의 요청을 완전히 별개의 것으로 인식하고 처리
+- 각 API 서버는 Client의 요청만을 단순 처리
+- 이전 요청이 다음 요청의 처리에 연관되어서는 안 됨
+- 물론 이전 요청이 DB를 수정하여 DB에 의해 바뀌는 것은 허용
+- Server의 처리 방식에 일관성을 부여하고 부담이 줄어들며, 서비스의 자유도가 높아집니다.
+
+#### Cacheable (캐시 처리 가능)
+- 웹 표준 HTTP 프로토콜을 그대로 사용하므로 웹에서 사용하는 기존의 인프라를 그대로 활용 가능
+- HTTP가 가진 가장 강력한 특징 중 하나인 캐싱 기능을 적용할 수 있음
+- HTTP 프로토콜 표준에서 사용하는 Last-Modified 태그나 E-Tag를 이용하면 캐싱 구현이 가능
+- 대량의 요청을 효율적으로 처리하기 위해 캐시가 요구됨
+- 캐시 사용을 통해 응답 시간이 빨라지고 REST Server 트랜잭션이 발생하지 않기 때문에 전체 응답 시간, 성능, 서버의 자원 이용률을 향상시킬 수 있음
+
+#### Layered System (계층화)
+- Client는 REST API Server만 호출
+- REST Server는 다중 계층으로 구성될 수 있음
+- API Server는 순수 비즈니스 로직을 수행하고 그 앞단에 보안, 로드 밸런싱, 암호화, 사용자 인증 등을 추가하여 구조상의 유연성을 제공
+- 로드 밸런싱, 공유 캐시 등을 통해 확장성과 보안성을 향상시킬 수 있음
+- PROXY, 게이트웨이 같은 네트워크 기반의 중간 매체를 사용할 수 있음
+
+#### Code-On-Demand (optional)
+- Server로부터 스크립트를 받아서 Client에서 실행
+- 반드시 충족할 필요는 없음
+
+#### Uniform Interface (인터페이스 일관성)
+- URI로 지정한 Resource에 대한 조작을 통일되고 한정적인 인터페이스로 수행
+- HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능
+- 특정 언어나 기술에 종속되지 않음
+
+#### 설계 기본 규칙
+- URI는 자원을 표현해야함
+- 동사보다는 명사, 대문자보다는 소문자 이용
+- 도큐먼트 이름 = 단수 명사 이용
+- 컬렉션 이름 = 복수 명사 이용
+- 스토어 이름 = 복수 명사 이용
+- 자원에 대한 행위는 HTTP Method로 표현
+- URI에 Method가 들어가면 안됨
+- URI에 행위에 대한 동사 표현이 들어가면 안됨
+- 경로 부분 중 변하는 부분은 유일 값으로 대체함 (예: id)
+- 마지막 문자로 / 를 넣지 않음
+- 불가피하게 긴 경로를 사용할 경우 (-)을 사용해 가독성을 높이며 (_)은 이용하지 않음
+- 확장자는 URI에 포함하지 않음
+
+#### REST 아키텍처 스타일을 따르는 API
+- REST API
+
+#### REST 아키텍처를 완전하게 따라 만들어진 API
+- RESTful API
+
+#### REST 아키텍처를 구현하는 웹 서비스
+- RESTful 웹 서비스
+
+#### 예시 코드
+```javascript
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+let books = [
+  { id: 1, title: 'Book 1', author: 'Author 1'},
+  { id: 2, title: 'Book 2', author: 'Author 2'},
+  { id: 3, title: 'Book 3', author: 'Author 3'}
+];
+
+app.get('/books', (req, res) => {
+  res.json(books);
+});
+
+app.get('/books/:id', (req, res) => {
+  const book = books.find(b => b.id === parseInt(req.params.id));
+  if (!book) res.status(404).send('The book with the given ID was not found.');
+  res.send(book);
+});
+
+app.post('/books', (req, res) => {
+  const book = {
+    id: books.length + 1,
+    title: req.body.title,
+    author: req.body.author
+  };
+  books.push(book);
+  res.send(book);
+});
+
+app.put('/books/:id', (req, res) => {
+  const book = books.find(b => b.id === parseInt(req.params.id));
+  if (!book) res.status(404).send('The book with the given ID was not found.');
+
+  book.title = req.body.title;
+  book.author = req.body.author;
+
+  res.send(book);
+});
+
+app.delete('/books/:id', (req, res) => {
+  const book = books.find(b => b.id === parseInt(req.params.id));
+  if (!book) res.status(404).send('The book with the given ID was not found.');
+
+  const index = books.indexOf(book);
+  books.splice(index, 1);
+
+  res.send(book);
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
+```
+
+# REST 아키텍처 원칙에 따른 API 구현
+
+이 코드는 **REST 아키텍처 원칙**을 따르는 API를 구현하고 있습니다. RESTful API의 핵심 원칙은 **자원(Resource)**, **행위(Verb)**, **표현(Representation)**입니다.
+
+## 자원(Resource)
+
+이 코드에서 자원은 **책(Book)**입니다. 각 책은 고유한 ID를 가지며, 이를 통해 책을 식별하고 접근할 수 있습니다.
+
+## 행위(Verb)
+
+HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산을 수행합니다.
+
+- `GET /books`: 모든 책의 목록을 가져옵니다.
+- `GET /books/:id`: 특정 ID의 책을 가져옵니다.
+- `POST /books`: 새로운 책을 추가합니다.
+- `PUT /books/:id`: 특정 ID의 책 정보를 업데이트합니다.
+- `DELETE /books/:id`: 특정 ID의 책을 삭제합니다.
+
+## 표현(Representation)
+
+클라이언트와 서버가 데이터를 주고받는 형태입니다. 이 코드에서는 **JSON 형식**으로 데이터를 주고받습니다.
+
+또한, 이 코드는 **Stateless(무상태성) 원칙**도 따르고 있습니다. 각 요청은 독립적으로 처리되며, 서버는 클라이언트의 상태 정보를 저장하지 않습니다. 따라서 이 코드는 REST 아키텍처 원칙에 따라 설계된 API입니다. 이러한 방식은 클라이언트와 서버 간의 상호작용을 단순화하고, 확장성과 유연성을 제공합니다. 이것이 위의 코드가 RESTful API로 설계된 이유입니다.
+
+
   </div>
 </details>
 
