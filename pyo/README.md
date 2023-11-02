@@ -288,7 +288,9 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 - 한 스레드가 프로세스 자원을 변경하면, 다른 이웃 스레드(sibling thread)도 그 변경 결과를 즉시 볼 수 있다.
 
 #### 멀티프로세스와 멀티스레드 
-**멀티 프로세싱 (Multiprocessing)은 다수의 프로세서로 다수의 "프로세스"를 협력적으로 동시에 처리하는 것입니다.** <br>
+**멀티 프로세싱 (Multiprocessing)은 다수의 프로세서로 다수의 "프로세스"를 협력적으로 동시에 처리하는 것입니다.** 
+<br>
+
 **멀티스레딩 (Multithreading)은 하나의 프로세스 안에서 여러 개의 실행 흐름 (스레드)을 두는 방식으로 여러 실행을 동시에 실행하도록 하나의 프로세스를 운영하는 방식입니다.**
 
 ![멀티프로세스VS멀티스레드](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLeuBN%2FbtszzIFjtP3%2FVtysBpPVKh53hqbmWx0uZ1%2Fimg.png)
