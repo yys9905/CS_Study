@@ -258,7 +258,7 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 
 ![멀티프로세스VS멀티스레드](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLeuBN%2FbtszzIFjtP3%2FVtysBpPVKh53hqbmWx0uZ1%2Fimg.png)
  
- **개인적으로 멀티프로세스와 멀티스레드를 한방에 이해 시켜준 사진**
+ **개인적으로 멀티프로세스와 멀티스레드를 한방에 이해 시켜준 이미지**
  **멀티 프로레스(크롬) VS 멀티 스레드 (익스플로어)**
 
 ![프로세스](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc9FvPh%2FbtszzKb8NMM%2FMTZoVCWQ2VBMa9YN0eP4kk%2Fimg.png)
@@ -274,7 +274,8 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 | 항목 | 프로그램 | 프로세스 |
 | --- | --- | --- |
 | 정의 | 어떤 작업을 하기 위해 실행할 수 있는 파일 | 실행되어 작업 중인 컴퓨터 프로그램 |
-| 상태 | 파일이 저장 장치에 있지만 메모리에는 올라가 있지 않은 정적인 상태 (그냥 코드 덩어리) | 메모리에 적재되고 CPU 자원을 할당받아 프로그램이 실행되고 있는 상태 (그 코드 덩어리를 실행한 것) |
+| 상태 | 파일이 저장 장치에 있지만 메모리에는 올라가 있지 않은 정적인 상태 | 메모리에 적재되고 CPU 자원을 할당받아 프로그램이 실행되고 있는 상태 |
+| 요약 | 그냥 코드 덩어리 | 그 코드 덩어리를 실행한 것 |
 
 ![스레드](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbcJ4D%2FbtszCeQ2sD7%2FMpytRcp7gKqafJCwTmXek1%2Fimg.png)
 
