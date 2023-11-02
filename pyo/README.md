@@ -255,8 +255,14 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 <summary> 멀티프로세스와 멀티스레드에 대해 설명해주세요. </summary>
 <div markdown="1">
 
-![URL과 URI](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcx4Kdb%2FbtszyH50wNO%2FJIyzskvsS9KJTbJmTK0hsK%2Fimg.png)
-	
+![멀티프로세스VS멀티스레드](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLeuBN%2FbtszzIFjtP3%2FVtysBpPVKh53hqbmWx0uZ1%2Fimg.png)
+ 
+ **개인적으로 멀티프로세스와 멀티스레드를 한방에 이해 시켜준 사진**
+ **멀티 프로레스(크롬) VS 멀티 스레드 (익스플로어)**
+
+![프로세스](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc9FvPh%2FbtszzKb8NMM%2FMTZoVCWQ2VBMa9YN0eP4kk%2Fimg.png)
+
+ 
 </div>
 </details>
 <!------------------------------------------------------------------------------------------------ 암호학/보안 ------------------------------------------------------------------------------------------------>
