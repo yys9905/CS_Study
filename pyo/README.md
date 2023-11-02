@@ -264,8 +264,10 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 ![프로세스](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc9FvPh%2FbtszzKb8NMM%2FMTZoVCWQ2VBMa9YN0eP4kk%2Fimg.png)
 ![작업관리](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBP5ib%2FbtszC4UrBxh%2FOh5yPSfE9jKveFJsCCEXb0%2Fimg.png)
 
-**프로세스는 운영체제로부터 자원을 할당받는 작업의 단위** 
+**프로세스는 운영체제로부터 자원을 할당받는 작업의 단위**
+
 <br>
+
 **프로세스의 특징**
 - 프로세스는 각각 독립된 메모리 영역(Code, Data, Stack, Heap의 구조)을 할당받는다.
 - 기본적으로 프로세스당 최소 1개의 스레드(메인 스레드)를 가지고 있다. 각 프로세스는 별도의 주소 공간에서 실행되며, 한 프로세스는 다른 프로세스의 변수나 자료구조에 접근할 수 없다.
@@ -280,7 +282,9 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 ![스레드](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbcJ4D%2FbtszCeQ2sD7%2FMpytRcp7gKqafJCwTmXek1%2Fimg.png)
 
 **스레드는 프로세스가 할당받은 자원을 이용하는 실행의 단위 (= 프로세스 내에서 실행되는 여러 흐름의 단위)**
+
 <br>
+
 **스레드의 특징**
 - 스레드는 프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유한다.
 - 스레드는 한 프로세스 내에서 동작되는 여러 실행의 흐름으로, 프로세스 내의 주소 공간이나 자원들(힙 공간 등)을 같은 프로세스 내에 스레드끼리 공유하면서 실행된다.
