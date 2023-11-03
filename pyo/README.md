@@ -397,9 +397,66 @@ ROLLBACK TRAN
 - 트랜잭션 **격리수준(isolation level)** 이란 **동시에 DB에 접근할 때, 그 접근을 어떻게 제외할지에 대한 설정**
 - 동시에 여러 트랜잭션이 처리될 때, 트랜잭션끼리 얼마나 서로 고립되어 있는지를 나타내는 것. **즉, 특정 트랙잭션이 다른 트랜잭션이 변경한 데이터를 볼 수 있도록 허용할지 말지를 결정하는 것**
 
+#### 격리 수준 단계
+1. READ UNCOMMITED
+2. READ COMMITED
+3. REPEATABLE READ
+4. SERIALIZABLE
+<br>
+- 격리 수준 증가할 수록 일관성은 증가하지만 동시성은 감소
+- 일반적인 DB 서비스는 READ COMMITED 또는 REPEATABLE READ 중 하나를 선택(oracle = READ COMMITED, mysql = REPEATABLE READ)
 
-![이미지제목](링크)
-- 줄맞춤
+### 1. READ-UNCOMMITED
+
+![READ-UNCOMMITED](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbtm4xu%2FbtszKdwy2Ra%2FfDbkMxXUb4TP8UT61tz3Y1%2Fimg.png)
+
+- 변경사항을 커밋하기 전에 다른 트랜잭션에서 조회할 수 있는 수준 (일반적으로 사용되지 않음)
+
+- Dirty Read, Repeatable Read, Phantom Read 문제도 발생할 수 있음.
+
+### 2. READ-COMMITED
+
+![READ-COMMITED](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwmHZD%2FbtszHH6gDv5%2F4aEpAlMuXZkkgxrtYxn19K%2Fimg.png)
+
+- 어떤 트랜잭션의 변경내용이 커밋이 완료된 데이터만 다른 트랜잭션에서 조회 가능. 트랜잭션이 이루어지는동안 다른 사용자는 해당 데이터에 접근이 불가능.
+
+- 커밋전에 조회가 됨으로 VALUE(값)의 오류가 발생할 수 있음
+
+- 이 격리수준은 Oracle DBMS 에서 기본으로 사용하고 있으며, 대중적으로 가장 많이 선택되는 격리수준
+
+- 결제 기능과 같은 금전적인 처리와 연결된 기능이라면 문제가 발생할 수 있음
+
+-  ‘Dirty Read’ 문제는 해결, 'Non-Repeatable Read’와 ‘Phantom Read’ 문제는 발생할 수 있음.
+
+
+### 3. REPETABLE READ
+
+![REPETABLE READ](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLYt9e%2FbtszF2p0mbv%2FiKPfx7Df23KOYXbTDxMYTK%2Fimg.png)
+
+
+- 트랜잭션이 시작되기 전에 커밋된 내용에 대해서만 조회할 수 있는 격리수준. 트랜잭션이 완료될 때 까지 SELECT 쿼리가 사용되는 모든 데이터에 Shared Lock(공유 락)이 걸리는 계층. (VALUE의 오류가 발생할 수 없음)
+
+- 원래 존재하지 않았던 컬럼이 조회될 수 있음 (Phantom Read)
+
+- 대신 나머지 현상 사라짐
+
+### 4. SERIALIZABLE
+
+- 한 트랜잭션에서 사용하는 데이터를 다른 트랜잭션에서 절대 접근할 수 없음.
+
+- 트랜잭션의 ACID 성질이 엄격하게 지켜지지만, 성능은 가장 떨어짐.
+
+- 트랜잭션이 완료될때까지 SELECT 쿼리가 사용되는 모든 데이터에 Shared Lock(공유 락) 이 걸리는 계층
+
+- 가장 엄격한 격리수준으로, 완벽한 읽기 일관성 모드를 제공한다.
+
+- 다른 사용자는 트랜잭션 영역에 해당되는 데이터에 대한 수정 및 입력 불가능
+
+#### 격리수준에서 발생하는 문제
+
+- Dirty Read: 이는 한 트랜잭션이 아직 커밋되지 않은 다른 트랜잭션의 변경 사항을 읽는 현상을 말합니다. 예를 들어, 한 트랜잭션이 데이터를 수정했지만 아직 커밋하지 않았는데, 다른 트랜잭션이 그 변경 사항을 읽는 경우를 말합니다. 이로 인해 데이터의 일관성이 깨질 수 있습니다.
+- Non-Repeatable Read: 이는 한 트랜잭션이 동일한 데이터를 두 번 읽었을 때, 그 사이에 다른 트랜잭션이 해당 데이터를 수정하고 커밋하여 두 번째 읽기에서 다른 결과를 얻는 현상을 말합니다. 이로 인해 한 트랜잭션 내에서 데이터의 일관성이 깨질 수 있습니다.
+- Phantom Read: 이는 한 트랜잭션이 동일한 쿼리를 두 번 실행했을 때, 그 사이에 다른 트랜잭션이 새로운 행을 삽입하거나 삭제하여 두 번째 쿼리의 결과 집합이 첫 번째와 다른 경우를 말합니다. 이로 인해 한 트랜잭션 내에서 쿼리 결과의 일관성이 깨질 수 있습니다.
 
 </div>
 </details>
