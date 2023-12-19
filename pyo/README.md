@@ -274,7 +274,7 @@ HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 책에 대한 CRUD 연산
 </details>
 
 <details>
-  <summary> HTTP와 HTTPS의 차이점은 무엇인가요? </summary>
+  <summary>HTTP와 HTTPS의 차이점은 무엇인가요? </summary>
     <div markdown="1">
 
 **HTTP**(Hypertext Transfer Protocol)는 **클라이언트와 서버 간 통신을 위한 통신 규칙** 또는 **프로토콜**입니다. 사용자가 웹 사이트를 방문하면 사용자 브라우저가 웹 서버에 HTTP 요청을 전송하고 웹 서버는 HTTP 응답으로 응답합니다. 웹 서버와 사용자 브라우저는 데이터를 일반 텍스트로 교환합니다. 간단히 말해 **HTTP 프로토콜은 네트워크 통신을 작동하게 하는 기본 기술입니다.**
