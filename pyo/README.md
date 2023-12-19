@@ -308,7 +308,7 @@ HTTPS를 사용하면, 사용자가 웹사이트에 로그인하거나 개인정
 </details>
 
 <details>
-  <summary> 가제 </summary>
+  <summary> 가제1 </summary>
     <div markdown="1">
 
 
