@@ -334,7 +334,7 @@ PUT, DELETE, HEAD, OPTIONS, CONNECT, TRACE 등의 다른 HTTP 메서드도 있�
   <summary> HTTP 메서드 정의와 역할에 대해서 설명해보세요. </summary>
     <div markdown="1">
 
-**HTTP(HyperText Transfer Protocol)**는 클라이언트와 서버 간의 통신을 위한 프로토콜입니다.
+**HTTP(HyperText Transfer Protocol)** 는 클라이언트와 서버 간의 통신을 위한 프로토콜입니다.
 
 **HTTP 요청 메서드**는 **주어진 리소스에 수행하길 원하는 행동을 나타냅니다.**
 
