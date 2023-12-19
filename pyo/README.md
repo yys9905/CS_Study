@@ -325,6 +325,7 @@ GET과 POST의 차이점은 다음과 같습니다:
 PUT, DELETE, HEAD, OPTIONS, CONNECT, TRACE 등의 다른 HTTP 메서드도 있지만, GET과 POST가 가장 많이 사용됩니다.
 
 참고로, GET 요청은 민감한 데이터를 다룰 때 사용해서는 안 됩니다.
+이유는 GET요청은 쿼리 문자열은 URL에 노출되어 보안상 취약하고 브라우저에 기록을 남기기 때문입니다.
 
   </div>
 </details>
