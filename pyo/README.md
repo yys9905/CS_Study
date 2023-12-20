@@ -334,7 +334,7 @@ PUT, DELETE, HEAD, OPTIONS, CONNECT, TRACE 등의 다른 HTTP 메서드도 있�
   <summary> HTTP 메서드 정의와 역할에 대해서 설명해보세요. </summary>
     <div markdown="1">
 
-**HTTP(HyperText Transfer Protocol)** 는 클라이언트와 서버 간의 통신을 위한 프로토콜입니다.
+**HTTP(HyperText Transfer Protocol)**는 클라이언트와 서버 간의 통신을 위한 프로토콜입니다.
 
 **HTTP 요청 메서드**는 **주어진 리소스에 수행하길 원하는 행동을 나타냅니다.**
 
@@ -358,6 +358,51 @@ HTTP 요청 메서드는 다음과 같습니다:
 - TRACE: 목적 리소스의 경로를 따라 메시지 loop-back 테스트를 합니다.
 
 **HTTP 요청 메서드는 클라이언트가 서버에게 요청을 보낼 때 사용됩니다.** 이를테면, GET 메서드를 사용하여 웹 페이지를 요청하면, 서버는 해당 페이지의 HTML 코드를 응답으로 보내줍니다. 이와 같이, HTTP 요청 메서드는 클라이언트와 서버 간의 통신을 가능하게 합니다.
+
+  </div>
+</details>
+
+<details>
+  <summary> CORS란 무엇인지 설명해주세요. </summary>
+    <div markdown="1">
+
+**CORS**는 "Cross-Origin Resource Sharing"의 약자로, **웹에서 다른 출처(도메인, 프로토콜, 포트)의 자원에 접근할 수 있도록 하는 보안 메커니즘**입니다.
+
+- "Cross-Origin Resource Sharing"을 합쳐서 해석하면, "다른 출처(Origin)의 자원(Resource)을 웹 페이지에서 공유(Sharing)할 수 있도록 허용하는 것”
+
+간단하게 말해서, **웹 페이지는 기본적으로 같은 출처에서만 데이터를 불러오도록 제한**되어 있습니다. 이는 보안상의 이유 때문인데, 다른 출처에서 스크립트나 데이터를 불러오는 것이 허용되면 해커들이 악의적인 코드를 심을 수 있기 때문입니다.
+
+그런데 웹 개발을 하다 보면 때때로 다른 출처의 데이터나 자원이 필요한 경우가 있습니다. 예를 들어, 당신이 만든 웹사이트가 [](http://mywebsite.com/)[http://mywebsite.com](http://mywebsite.com) 이고, 당신이 다른 사이트 [](http://api.othersite.com/)[http://api.othersite.com](http://api.othersite.com) 에서 제공하는 데이터를 사용하고 싶을 때입니다. 이**때 CORS 정책이 없다면 보안상의 이유로 이러한 요청은 차단**됩니다.
+
+CORS는 이러한 문제를 해결하기 위해 만들어졌습니다. **서버에서 특정 HTTP 헤더를 설정하면, 브라우저는 이를 감지하고 다른 출처의 자원에 대한 접근을 허용하게 됩니다.**
+
+즉, **CORS는 안전한 방법으로 다른 출처의 자원을 사용할 수 있게 해주는 규칙이자 시스템**이라고 할 수 있습니다.
+
+다음은 node.js에서 cors를 사용하는 간단한 예시 코드
+
+```jsx
+// npm install express cors
+
+---
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// CORS 미들웨어를 사용하여 모든 요청에 대해 CORS를 허용합니다.
+app.use(cors());
+
+// 예시 라우트
+app.get('/data', (req, res) => {
+    res.json({ message: 'Hello World' });
+});
+
+// 서버를 3000 포트에서 실행합니다.
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+```
 
   </div>
 </details>
